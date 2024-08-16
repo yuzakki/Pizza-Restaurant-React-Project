@@ -6,8 +6,8 @@ function Header() {
   return (
     <div className=" bg-yellow-400">
       <header className="container mx-auto flex items-center justify-between border-b border-stone-200  px-4 py-3 uppercase sm:px-6">
-        <Link to="/" className="tracking-widest">
-          Fast React Pizza Co.
+        <Link to="/" className="tracking-widest font-bold">
+         <h1>Broto`s Pizzaria - Express</h1> 
         </Link>
         <SearchOrder />
         <Username />

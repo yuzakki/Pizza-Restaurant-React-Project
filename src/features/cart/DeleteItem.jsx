@@ -7,7 +7,7 @@ function DeleteItem({ pizzaId }) {
 
   return (
     <Button type="small" onClick={() => dispatch(deleteItem(pizzaId))}>
-      Delete
+      Deletar
     </Button>
   );
 }

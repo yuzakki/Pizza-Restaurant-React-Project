@@ -41,12 +41,12 @@ function CreateOrder() {
 
   return (
     <div className="px-4 py-6">
-      <h2 className="mb-8 text-xl font-semibold">Ready to order? Let's go!</h2>
+      <h2 className="mb-8 text-xl font-semibold">Pronto para fazer o pedido? Bora!</h2>
 
       {/* <Form method="POST" action="/order/new"> */}
       <Form method="POST">
         <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
-          <label className="sm:basis-40">First Name</label>
+          <label className="sm:basis-40">Primeiro nome</label>
           <input
             className="input grow"
             type="text"
@@ -57,7 +57,7 @@ function CreateOrder() {
         </div>
 
         <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
-          <label className="sm:basis-40">Phone number</label>
+          <label className="sm:basis-40">Número de telefone</label>
           <div className="grow">
             <input className="input w-full" type="tel" name="phone" required />
             {formErrors?.phone && (
@@ -69,7 +69,7 @@ function CreateOrder() {
         </div>
 
         <div className="relative mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
-          <label className="sm:basis-40">Address</label>
+          <label className="sm:basis-40">Endereço</label>
           <div className="grow">
             <input
               className="input w-full"
@@ -96,7 +96,7 @@ function CreateOrder() {
                   dispatch(fetchAddress());
                 }}
               >
-                Get position
+                Obter localização
               </Button>
             </span>
           )}
@@ -112,7 +112,7 @@ function CreateOrder() {
             onChange={(e) => setWithPriority(e.target.checked)}
           />
           <label htmlFor="priority" className="font-medium">
-            Want to yo give your order priority?
+          Quer dar prioridade ao seu pedido?
           </label>
         </div>
 
@@ -130,8 +130,8 @@ function CreateOrder() {
 
           <Button disabled={isSubmitting || isLoadingAddress} type="primary">
             {isSubmitting
-              ? 'Placing order....'
-              : `Order now from ${formatCurrency(totalPrice)}`}
+              ? 'Fazendo pedido....'
+              : `Encomende agora a partir de${formatCurrency(totalPrice)}`}
           </Button>
         </div>
       </Form>
@@ -154,7 +154,7 @@ export async function action({ request }) {
   const errors = {};
   if (!isValidPhone(order.phone))
     errors.phone =
-      'Please give us your correct phone number. We might need it to contact you.';
+      'Por favor, seu número de telefone esta incorreto. Podemos precisar dele para entrar em contato com você.';
 
   if (Object.keys(errors).length > 0) return errors;
 
